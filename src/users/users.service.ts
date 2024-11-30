@@ -17,13 +17,11 @@ export class UsersService {
   }
 
   async findOne(id: number) {
-    const user = await this.databaseService.users.findUnique({
+    return this.databaseService.users.findUnique({
       where: {
         id: id,
       },
     });
-
-    return user;
   }
 
   async update(id: number, updateUserDto: Prisma.UsersUpdateInput) {

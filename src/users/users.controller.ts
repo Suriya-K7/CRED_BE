@@ -29,9 +29,7 @@ export class UsersController {
 
   @Get(':id')
   findOne(@Param('id', ParseIntPipe) id: number) {
-    const user = this.usersService.findOne(id);
-
-    if (!user) return this.usersService.findOne(id);
+    return this.usersService.findOne(id);
   }
 
   @Patch(':id')
